@@ -62,40 +62,122 @@
         </div>
     </section>
 
-    <!-- Calculadora -->
+    <!-- Calculadora de Juros Compostos -->
     <section id="calculadora">
         <div class="container">
             <div class="section-title">
-                <h2>Calculadora Financeira</h2>
-                <p>Ferramentas úteis para cálculos do dia a dia</p>
+                <h2>Calculadora de Juros Compostos</h2>
+                <p>Calcule investimentos com aportes mensais e projeção de rendimentos</p>
             </div>
             
-            <div class="calculator">
-                <h3>Calculadora de Juros Compostos</h3>
-                <div class="calc-display" id="display">0</div>
-                <div class="calc-buttons">
-                    <button class="calc-btn" data-value="7">7</button>
-                    <button class="calc-btn" data-value="8">8</button>
-                    <button class="calc-btn" data-value="9">9</button>
-                    <button class="calc-btn operator" data-value="/">÷</button>
-                    <button class="calc-btn" data-value="4">4</button>
-                    <button class="calc-btn" data-value="5">5</button>
-                    <button class="calc-btn" data-value="6">6</button>
-                    <button class="calc-btn operator" data-value="*">×</button>
-                    <button class="calc-btn" data-value="1">1</button>
-                    <button class="calc-btn" data-value="2">2</button>
-                    <button class="calc-btn" data-value="3">3</button>
-                    <button class="calc-btn operator" data-value="-">-</button>
-                    <button class="calc-btn" data-value="0">0</button>
-                    <button class="calc-btn" data-value=".">.</button>
-                    <button class="calc-btn operator" id="clear">C</button>
-                    <button class="calc-btn operator" data-value="+">+</button>
-                    <button class="calc-btn equals" id="calculate">=</button>
+            <div class="calculator-card">
+                <div class="calculator-grid">
+                    <div class="inputs">
+                        <div class="input-group">
+                            <label for="initialValue">Valor Inicial (R$)</label>
+                            <input type="number" id="initialValue" min="0" step="0.01" value="1000">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="monthlyContribution">Aporte Mensal (R$)</label>
+                            <input type="number" id="monthlyContribution" min="0" step="0.01" value="100">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="interestRate">Taxa de Juros (%)</label>
+                            <input type="number" id="interestRate" min="0" step="0.01" value="0.5">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Periodicidade da Taxa</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="monthly" name="periodicity" value="monthly" checked>
+                                    <label for="monthly">Mensal</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="yearly" name="periodicity" value="yearly">
+                                    <label for="yearly">Anual</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="time">Tempo</label>
+                            <div class="time-input">
+                                <input type="number" id="time" min="1" value="12">
+                                <select id="timeUnit">
+                                    <option value="months">Meses</option>
+                                    <option value="years">Anos</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button id="calculateBtn" class="btn">Calcular</button>
+                        <button id="clearBtn" class="btn btn-clear">Limpar</button>
+                    </div>
+                    
+                    <div class="results">
+                        <h3>Resultado</h3>
+                        
+                        <div class="result-item">
+                            <span>Valor Investido:</span>
+                            <span id="totalInvested" class="result-value">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span>Juros Acumulados:</span>
+                            <span id="totalInterest" class="result-value">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span>Valor Final:</span>
+                            <span id="finalAmount" class="result-value highlight">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="summary">
+                            <div class="summary-box">
+                                <div>Rentabilidade</div>
+                                <div id="profitability" class="summary-value">0%</div>
+                            </div>
+                            
+                            <div class="summary-box">
+                                <div>Juros Mensais</div>
+                                <div id="monthlyEarnings" class="summary-value">R$ 0,00</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div style="margin-top: 2rem; text-align: center;">
-                <a href="#" class="btn">Mais Calculadoras</a>
+                
+                <div class="tabs">
+                    <div class="tab active" data-tab="chart">Gráfico</div>
+                    <div class="tab" data-tab="table">Tabela de Evolução</div>
+                </div>
+                
+                <div class="tab-content active" id="chart-tab">
+                    <div class="chart-container">
+                        <canvas id="resultsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="table-tab">
+                    <div class="table-container">
+                        <table class="progression-table">
+                            <thead>
+                                <tr>
+                                    <th>Mês/Ano</th>
+                                    <th>Saldo Inicial</th>
+                                    <th>Aporte</th>
+                                    <th>Juros</th>
+                                    <th>Saldo Final</th>
+                                </tr>
+                            </thead>
+                            <tbody id="progressionTableBody">
+                                <!-- Os dados da tabela serão preenchidos via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -105,7 +187,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Fórum de Discussão</h2>
-                <p>Participe das discussões e ajude outros contadores</p>
+                <p>Participe das discussions e ajude outros contadores</p>
             </div>
             
             <div class="forum-preview">
@@ -200,6 +282,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
