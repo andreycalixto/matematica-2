@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidade Colaborativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Contabilidade<span>Colaborativa</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#forum">Fórum</a></li>
+                    <li><a href="#materiais">Materiais</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Comunidade de Contadores do Brasil</h1>
+            <p>Um espaço colaborativo onde profissionais da contabilidade podem compartilhar conhecimento, tirar dúvidas e acessar recursos de matemática financeira.</p>
+            <a href="#forum" class="btn">Participar da Comunidade</a>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recursos para Contadores</h2>
+                <p>Ferramentas e conteúdos para auxiliar no seu dia a dia</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Calculadoras Financeiras</h3>
+                    <p>Calculadoras especializadas para juros compostos, amortização, valuation e outros cálculos essenciais para contadores.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Fórum de Discussão</h3>
+                    <p>Compartilhe experiências, tire dúvidas e colabore com outros profissionais da área contábil.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Material Didático</h3>
+                    <p>Acesse conteúdos de matemática financeira, legislação tributária e práticas contábeis atualizadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section id="calculadora">
+        <div class="container">
+            <div class="section-title">
+                <h2>Calculadora Financeira</h2>
+                <p>Ferramentas úteis para cálculos do dia a dia</p>
+            </div>
+            
+            <div class="calculator">
+                <h3>Calculadora de Juros Compostos</h3>
+                <div class="calc-display" id="display">0</div>
+                <div class="calc-buttons">
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn operator" data-value="/">÷</button>
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn operator" data-value="*">×</button>
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn operator" data-value="-">-</button>
+                    <button class="calc-btn" data-value="0">0</button>
+                    <button class="calc-btn" data-value=".">.</button>
+                    <button class="calc-btn operator" id="clear">C</button>
+                    <button class="calc-btn operator" data-value="+">+</button>
+                    <button class="calc-btn equals" id="calculate">=</button>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#" class="btn">Mais Calculadoras</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fórum -->
+    <section id="forum" style="background-color: #f5f7f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fórum de Discussão</h2>
+                <p>Participe das discussões e ajude outros contadores</p>
+            </div>
+            
+            <div class="forum-preview">
+                <div class="question">
+                    <h4>Como calcular o valuation de uma empresa de serviços?</h4>
+                    <div class="meta">Postado por: Carlos Silva • 12/08/2023 • 15 respostas</div>
+                    <p>Preciso calcular o valuation de uma empresa de consultoria para uma possível fusão. Quais métodos são mais adequados?</p>
+                </div>
+                
+                <div class="question">
+                    <h4>Dúvida sobre cálculo de juros compostos em aplicações financeiras</h4>
+                    <div class="meta">Postado por: Ana Santos • 10/08/2023 • 8 respostas</div>
+                    <p>Alguém pode me explicar a diferença entre taxa nominal e efetiva no cálculo de juros de aplicações?</p>
+                </div>
+                
+                <div class="question">
+                    <h4>Problema com cálculo de amortização SAC</h4>
+                    <div class="meta">Postado por: Roberto Alves • 08/08/2023 • 5 respostas</div>
+                    <p>Estou com dificuldade no cálculo da amortização pelo sistema SAC para um financiamento com carência. Alguém pode ajudar?</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#" class="btn">Acessar o Fórum Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiais -->
+    <section id="materiais">
+        <div class="container">
+            <div class="section-title">
+                <h2>Materiais de Apoio</h2>
+                <p>Conteúdos para aprimorar seus conhecimentos</p>
+            </div>
+            
+            <div class="materials">
+                <div class="material-card">
+                    <div class="material-content">
+                        <h3>Matemática Financeira</h3>
+                        <p>Conceitos fundamentais de juros, amortização e valuation com exemplos práticos.</p>
+                        <a href="#" class="btn">Acessar</a>
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <div class="material-content">
+                        <h3>Legislação Tributária</h3>
+                        <p>Guia atualizado sobre as principais leis tributárias e suas aplicações.</p>
+                        <a href="#" class="btn">Acessar</a>
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <div class="material-content">
+                        <h3>Ética Profissional</h3>
+                        <p>Normas e condutas éticas para contadores e profissionais da área.</p>
+                        <a href="#" class="btn">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p>Uma plataforma colaborativa criada por contadores para contadores, com o objetivo de compartilhar conhecimento e melhorar a prática profissional.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: contato@contabilidadecolaborativa.com.br</p>
+                    <p>Telefone: (11) 3456-7890</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <p><a href="#inicio">Início</a></p>
+                    <p><a href="#recursos">Recursos</a></p>
+                    <p><a href="#calculadora">Calculadora</a></p>
+                    <p><a href="#forum">Fórum</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Contabilidade Colaborativa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
