@@ -124,7 +124,7 @@ nav ul li a:hover::after {
 .btn {
     display: inline-block;
     background-color: var(--primary-light);
-    color: white;
+    color: rgb(209, 29, 29);
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
