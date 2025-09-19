@@ -123,8 +123,8 @@ nav ul li a:hover::after {
 /* Botões */
 .btn {
     display: inline-block;
-    background-color: var(--primary-light);
-    color: rgb(209, 29, 29);
+    background-color: green;
+    color: rgb(252, 252, 252);
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
